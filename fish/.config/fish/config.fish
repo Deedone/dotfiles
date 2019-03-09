@@ -8,11 +8,13 @@ set -x MONITOR eDP1
 alias vim="nvim"
 alias la="exa -a"
 alias ls="exa"
+alias xclip="xclip -selection clipboard"
 
 abbr -a sp "sudo pacman"
 abbr -a ss "sudo systemctl"
 abbr -a mm "sudo xrandr --output eDP1 --primary --auto --output DP1 --auto --left-of eDP1"
 abbr -a bg "feh --bg-scale ~/Images/Wallpapers/0.jpg"
+abbr -a xo "xdg-open"
 
 source ~/.cargo/env
 

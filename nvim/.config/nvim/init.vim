@@ -38,8 +38,10 @@ call plug#begin("~/.vimplugins")
 	Plug 'mattn/emmet-vim'
 	Plug 'w0rp/ale'
 	Plug 'dag/vim-fish'
+	Plug 'lervag/vimtex'
 
 call plug#end()
+
 
 
 let g:ale_sign_error = '●' " Less aggressive than the default '>>'
