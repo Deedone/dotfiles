@@ -4,6 +4,8 @@ set -x TERM xterm-256color
 set -x TERMINAL st
 set -x -a PATH $HOME/scripts
 set -x MONITOR eDP1
+set -x XDG_CONFIG_HOME /home/ddone/.config
+set fish_greeting
 
 alias vim="nvim"
 alias la="exa -a"
@@ -15,6 +17,7 @@ abbr -a ss "sudo systemctl"
 abbr -a mm "sudo xrandr --output eDP1 --primary --auto --output DP1 --auto --left-of eDP1"
 abbr -a bg "feh --bg-scale ~/Images/Wallpapers/0.jpg"
 abbr -a xo "xdg-open"
+abbr -a targz "tar -czvf archive.tar.gz "
 
 source ~/.cargo/env
 
@@ -36,3 +39,13 @@ set -x LESS_TERMCAP_ZN (tput ssubm)
 set -x LESS_TERMCAP_ZV (tput rsubm)
 set -x LESS_TERMCAP_ZO (tput ssupm)
 set -x LESS_TERMCAP_ZW (tput rsupm)
+
+function sudo
+	if test "$argv" = !!
+		echo "sudo "(echo $history[1])
+    eval command sudo $history[1]
+else
+    command sudo $argv
+    end
+end
+

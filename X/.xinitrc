@@ -1,6 +1,6 @@
 
 
-setxkbmap us,ru,ua -option caps:escape
+setxkbmap us,ru -option caps:escape
 xrandr --auto
 
 numlockx &

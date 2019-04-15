@@ -36,19 +36,12 @@ call plug#begin("~/.vimplugins")
 	Plug 'pangloss/vim-javascript'
 	Plug 'mxw/vim-jsx'
 	Plug 'mattn/emmet-vim'
-	Plug 'w0rp/ale'
+	"Plug 'w0rp/ale'
 	Plug 'dag/vim-fish'
 	Plug 'lervag/vimtex'
+	Plug 'lyokha/vim-xkbswitch'
 
 call plug#end()
-
-
-
-let g:ale_sign_error = '●' " Less aggressive than the default '>>'
-let g:ale_sign_warning = '.'
-let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
-let g:ale_javascript_eslint_options = '--jsx'
-
 
 let g:user_emmet_leader_key='<C-x>'
 let g:user_emmet_settings = {
@@ -73,6 +66,8 @@ set noshowmode
 set scrolloff=15
 set ttyfast
 set conceallevel=1
+set undodir=/home/ddone/.config/nvimundo
+set undofile
 
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
@@ -84,12 +79,11 @@ let NERDTreeMinimalUI=1
 let NERDTreeQuitOnOpen=1
 let mapleader=" "
 let g:ycm_rust_src_path = '~/Code/Rust/rust/src'
+let g:XkbSwitchEnabled = 1
  
 "remaps here
 nmap  <leader><leader> :nohlsearch<CR>
 map <leader>s :NERDTreeToggle<cr>
-nnoremap <leader>e :SyntasticCheck<CR>
-nnoremap <leader>g :Goyo<CR>
 
 noremap <Up> :tabnew<CR>
 noremap <Down> :tabc <CR>
