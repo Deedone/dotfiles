@@ -2,6 +2,8 @@ set runtimepath^=~/.vim runtimepath+=~/.vim/after
 let &packpath = &runtimepath
 
 
+
+
 if &shell =~# 'fish$'
 	    set shell=sh
 endif
@@ -19,6 +21,7 @@ colorscheme deep-space
 "i surender vim plug here
 call plug#begin("~/.vimplugins")
 	Plug 'tyrannicaltoucan/vim-deep-space'
+	Plug 'digitaltoad/vim-pug'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
 	Plug 'scrooloose/nerdtree'
@@ -28,9 +31,9 @@ call plug#begin("~/.vimplugins")
 	Plug 'enricobacis/vim-airline-clock'
 	Plug 'leafgarland/typescript-vim'
 	Plug 'editorconfig/editorconfig-vim'
-	"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	"Plug 'neomake/neomake'
-	"Plug 'Shougo/denite.nvim'
+	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	Plug 'calviken/vim-gdscript3'
+	Plug 'ervandew/supertab'
 	"Plug 'tweekmonster/deoplete-clang2'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --racer-completer' }
 	Plug 'pangloss/vim-javascript'
@@ -40,8 +43,11 @@ call plug#begin("~/.vimplugins")
 	Plug 'dag/vim-fish'
 	Plug 'lervag/vimtex'
 	Plug 'lyokha/vim-xkbswitch'
+	Plug 'kovisoft/slimv'
 
 call plug#end()
+
+let g:slimv_swank_cmd = '! st -e cmucl -load /usr/share/emacs/site-lisp/slime/start-swank.lisp &'
 
 let g:user_emmet_leader_key='<C-x>'
 let g:user_emmet_settings = {
@@ -70,7 +76,6 @@ set undodir=/home/ddone/.config/nvimundo
 set undofile
 
 " deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 let g:airline_theme='deep_space'
 let g:airline_powerline_fonts = 1
@@ -79,7 +84,10 @@ let NERDTreeMinimalUI=1
 let NERDTreeQuitOnOpen=1
 let mapleader=" "
 let g:ycm_rust_src_path = '~/Code/Rust/rust/src'
+let g:ycm_min_num_of_chars_for_completion = 5
 let g:XkbSwitchEnabled = 1
+let g:deoplete#enable_at_startup = 0
+let g:ycm_filetype_blacklist = {"gdscript3":1}
  
 "remaps here
 nmap  <leader><leader> :nohlsearch<CR>
@@ -99,6 +107,13 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 "Autoopen cwd if no path speciifed
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd FileType gdscript3 imap <c-o> <c-x><c-o>| inoremap <c-p> <c-n>
+
+	"call deoplete#custom#option({
+    "\ 'auto_complete_delay': 200,
+    "\ 'smart_case': v:true,
+    "\ 'min_pattern_length': 5,
+    "\ })
 "autoopen on new tabs
 
 

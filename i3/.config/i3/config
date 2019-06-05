@@ -69,7 +69,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+b split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -186,24 +186,10 @@ bindsym XF86AudioLowerVolume exec --no-startup-id "amixer set 'Master' 1%-"
 
 bindsym $mod+Shift+p exec --no-startup-id ~/scripts/lock.sh
 
-mode "music"{
 
-				bindsym q exec --no-startup-id cmus-remote -r
-				bindsym w exec --no-startup-id cmus-remote -n
-				bindsym a exec --no-startup-id cmus-remote -v -10%
-				bindsym s exec --no-startup-id cmus-remote -v +10%
-				bindsym e exec --no-startup-id cmus-remote -p
-				bindsym d exec --no-startup-id cmus-remote -u
-				
+bindsym $mod+b exec --no-startup-id "firefox --browser"
+bindsym $mod+Shift+b exec --no-startup-id "fish -c open_incognito"
 
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+m mode "default"
-				
-
-}
-bindsym $mod+m mode "music" 
 
 exec --no-startup-id feh --bg-scale ~/Images/Wallpapers/0.jpg
 exec --no-startup-id compton -b -c --config ~/.config/compton.conf  --vsync opengl
@@ -217,7 +203,7 @@ smart_gaps on
 
 bindsym $mod+plus gaps inner all plus 5
 bindsym $mod+minus gaps inner all minus 5
-bindsym $mod+shift+w exec google-chrome-stable
+bindsym $mod+o exec --no-startup-id opener.sh
 
 
 for_window [class="^.*"] border pixel 0
@@ -225,8 +211,6 @@ for_window [class="Google-chrome" title="Open Files"] fullscreen enable
 
 
 #TG SCRACHPAD
-
-
 bindsym $mod+c [class="TelegramDesktop"] scratchpad show; [class="TelegramDesktop"] move position center
 for_window [class="TelegramDesktop"] floating enable
 for_window [class="TelegramDesktop"] move scratchpad
