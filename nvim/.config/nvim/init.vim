@@ -4,9 +4,6 @@ let &packpath = &runtimepath
 
 
 
-if &shell =~# 'fish$'
-	    set shell=sh
-endif
 
 filetype plugin indent on
 syntax enable
@@ -15,12 +12,16 @@ let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
 set background=dark
+set clipboard=unnamedplus
+set expandtab
 colorscheme deep-space
 
 
 "i surender vim plug here
-call plug#begin("~/.vimplugins")
+call plug#begin("~/.vim/plugins")
 	Plug 'tyrannicaltoucan/vim-deep-space'
+  Plug 'andreshazard/vim-freemarker' 
+  Plug 'leafgarland/typescript-vim'
 	Plug 'digitaltoad/vim-pug'
 	Plug 'tpope/vim-surround'
 	Plug 'tpope/vim-repeat'
@@ -28,33 +29,28 @@ call plug#begin("~/.vimplugins")
 	Plug 'luochen1990/rainbow'
 	Plug 'vim-airline/vim-airline'
 	Plug 'airblade/vim-gitgutter'
-	Plug 'enricobacis/vim-airline-clock'
-	Plug 'leafgarland/typescript-vim'
+	Plug 'rust-lang/rust.vim'
+	"Plug 'enricobacis/vim-airline-clock'
+	"Plug 'leafgarland/typescript-vim'
 	Plug 'editorconfig/editorconfig-vim'
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-	Plug 'calviken/vim-gdscript3'
+	"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+	"Plug 'calviken/vim-gdscript3'
 	Plug 'ervandew/supertab'
 	"Plug 'tweekmonster/deoplete-clang2'
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --clang-completer --racer-completer' }
 	Plug 'pangloss/vim-javascript'
-	Plug 'mxw/vim-jsx'
-	Plug 'mattn/emmet-vim'
-	"Plug 'w0rp/ale'
-	Plug 'dag/vim-fish'
+	"Plug 'mxw/vim-jsx'
+	"Plug 'mattn/emmet-vim'
+	Plug 'w0rp/ale'
+	"Plug 'dag/vim-fish'
 	Plug 'lervag/vimtex'
 	Plug 'lyokha/vim-xkbswitch'
-	Plug 'kovisoft/slimv'
+	"Plug 'kovisoft/slimv'
 
 call plug#end()
 
-let g:slimv_swank_cmd = '! st -e cmucl -load /usr/share/emacs/site-lisp/slime/start-swank.lisp &'
 
-let g:user_emmet_leader_key='<C-x>'
-let g:user_emmet_settings = {
-  \  'javascript.jsx' : {
-    \      'extends' : 'jsx',
-    \  },
-  \}
+let g:ale_linters = {'rust': ['cargo']}
 
 set number relativenumber
 set hlsearch
@@ -84,7 +80,7 @@ let NERDTreeMinimalUI=1
 let NERDTreeQuitOnOpen=1
 let mapleader=" "
 let g:ycm_rust_src_path = '~/Code/Rust/rust/src'
-let g:ycm_min_num_of_chars_for_completion = 5
+"let g:ycm_min_num_of_chars_for_completion = 5
 let g:XkbSwitchEnabled = 1
 let g:deoplete#enable_at_startup = 0
 let g:ycm_filetype_blacklist = {"gdscript3":1}
@@ -99,6 +95,7 @@ noremap <Left> :tabp <CR>
 noremap <Right> :tabn <CR>
 
 command Q :wq
+command W :w
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 "Open vim on directory

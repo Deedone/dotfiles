@@ -223,6 +223,12 @@ for_window [instance="dropin"] move scratchpad
 for_window [instance="dropin"] resize set 1150 670
 exec --no-startup-id "st -n dropin"
 
+bindsym $mod+m [class="Google Play Music Desktop Player"] scratchpad show; [instance="Google Play Music Desktop Player"] move position center
+for_window [class="Google Play Music Desktop Player"] floating enable
+for_window [class="Google Play Music Desktop Player"] move scratchpad
+for_window [class="Google Play Music Desktop Player"] resize set 1150 670
+exec --no-startup-id gpmdp
+
 
 
 

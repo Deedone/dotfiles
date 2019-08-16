@@ -59,9 +59,9 @@ font-3 = Font Awesome 5 Brands:size=12
 
 format-padding = 5
 
-modules-left = i3
+modules-left = i3 gpmdp
 modules-center = 
-modules-right = filesystem xbacklight alsa xkeyboard memory cpu battery temperature date powermenu
+modules-right = filesystem xbacklight alsa xkeyboard memory cpu temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -81,6 +81,11 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
+
+[module/gpmdp]
+type = custom/script
+exec = python3 -u ~/scripts/polybar-gpmdp.py
+tail = true
 
 [module/xwindow]
 type = internal/xwindow

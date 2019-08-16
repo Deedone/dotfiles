@@ -17,7 +17,7 @@ echo "$W $H $X $Y $DUR"
 FILENAME="/home/ddone/Images/Gifs/$(date +%F_%H:%M)_$NAME.mp4"
 
 
-ffmpeg -y -f x11grab  -video_size ${W}x${H} -i :0.0+${X},${Y} -t 00:00:${DUR} $FILENAME
-echo $FILENAME| xclip -selection clipboard 
+ffmpeg -y -f x11grab  -video_size ${W}x${H} -i :0.0+${X},${Y} -t 00:00:${DUR} "$FILENAME"
+echo "$FILENAME"| xclip -selection clipboard 
 notify-send "Recording done"
 

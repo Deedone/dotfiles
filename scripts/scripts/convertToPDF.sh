@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 export IFS=$'\n'
-for f in $(ls ~/Downloads | grep -E "docx?" )
+for f in $(ls ~/Downloads | grep -E "\.docx?" )
 do
 	echo "$f"
 	pdf="$(echo "$f" | sed -E "s/docx?/pdf/")"

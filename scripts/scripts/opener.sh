@@ -1,7 +1,7 @@
 #!/usr/bin/sh
 
 
-chosen="$(find Downloads -maxdepth 1 -type f -printf "%f\n" |grep pdf| rofi -dmenu)"
+chosen="$(find /home/ddone/Downloads -maxdepth 1 -type f -printf "%f\n" |grep pdf| rofi -dmenu)"
 
 if [ -f "/home/ddone/Downloads/$chosen" ]
 then
