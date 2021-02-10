@@ -51,6 +51,7 @@ fi
 
 
 MONITOR=DP1
+wmname LG3D
 setxkbmap us,ru
 #setxkbmap -option caps:backspace
 #setxkbmap -option altwin:swap_alt_win

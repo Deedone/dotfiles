@@ -7,23 +7,23 @@ do
 	case $(date +%H) in
 		0)
 			feh --bg-scale ~/Wallpapers/0.png ;;
-		1)
+		01)
 			feh --bg-scale ~/Wallpapers/0.png ;;
-		2)
+		02)
 			feh --bg-scale ~/Wallpapers/1.png ;;
-		3)
+		03)
 			feh --bg-scale ~/Wallpapers/1.png ;;
-		4)
+		04)
 			feh --bg-scale ~/Wallpapers/2.png ;;
-		5)
+		05)
 			feh --bg-scale ~/Wallpapers/2.png ;;
-		6)
+		06)
 			feh --bg-scale ~/Wallpapers/3.png ;;
-		7)
+		07)
 			feh --bg-scale ~/Wallpapers/3.png ;;
-		8)
+		08)
 			feh --bg-scale ~/Wallpapers/4.png ;;
-		9)
+		09)
 			feh --bg-scale ~/Wallpapers/4.png ;;
 		10)
 			feh --bg-scale ~/Wallpapers/5.png ;;
