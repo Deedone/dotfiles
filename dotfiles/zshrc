@@ -18,12 +18,7 @@ zstyle :compinstall filename '/home/mpoturai/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
-#
-#
-#
-#
-#
-#
+
 PATH="$PATH:/home/mpoturai/.local/bin"
 PATH="${HOME}/.bin:${PATH}"
 PATH="/home/mpoturai/.local/share/go/bin:$PATH"
@@ -72,3 +67,4 @@ _fzf_compgen_dir() {
 alias fuck="git rebase --show-current-patch"
 
 export XDG_CACHE_HOME=$HOME/.cache
+alias paru="paru --bottomup"
