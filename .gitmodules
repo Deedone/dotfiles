@@ -4,3 +4,21 @@
 [submodule "dotfiles/zsh/plugins/colorize"]
 	path = dotfiles/zsh/plugins/colorize
 	url = https://github.com/zpm-zsh/colorize.git
+[submodule "dotfiles/zsh/zsh-256color"]
+	path = dotfiles/zsh/zsh-256color
+	url = https://github.com/chrissicool/zsh-256color.git
+[submodule "dotfiles/zsh/plugins/colors"]
+	path = dotfiles/zsh/plugins/colors
+	url = https://github.com/zpm-zsh/colors.git
+[submodule "dotfiles/zsh/plugins/fast-syntax-highlighting"]
+	path = dotfiles/zsh/plugins/fast-syntax-highlighting
+	url = git@github.com:zdharma-zmirror/fast-syntax-highlighting.git
+[submodule "dotfiles/zsh/plugins/zsh-autosuggestions"]
+	path = dotfiles/zsh/plugins/zsh-autosuggestions
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
+[submodule "dotfiles/zsh/plugins/zsh-completions"]
+	path = dotfiles/zsh/plugins/zsh-completions
+	url = git@github.com:zsh-users/zsh-completions.git
+[submodule "dotfiles/zsh/plugins/zsh-fzf-history-search"]
+	path = dotfiles/zsh/plugins/zsh-fzf-history-search
+	url = https://github.com/joshskidmore/zsh-fzf-history-search.git
