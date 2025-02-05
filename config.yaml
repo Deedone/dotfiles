@@ -19,3 +19,6 @@ profiles:
     dotfiles:
     - f_zshrc
     - d_zsh
+  ARCHBOX:
+    include:
+    - mpoturai-pc

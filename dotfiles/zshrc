@@ -25,7 +25,6 @@ PATH="/home/mpoturai/.local/share/go/bin:$PATH"
 PATH="/home/mpoturai/fastdeploy/bin:$PATH"
 export GIT_SSL_NO_VERIFY=1
 xset r rate 250 50
-. "$HOME/.cargo/env"
 
 function set-title() {
   if [[ -z "$ORIG" ]]; then
@@ -54,6 +53,7 @@ export GZ_SIM_SYSTEM_PLUGIN_PATH=$HOME/gz_ws/src/ardupilot_gazebo/build:$GZ_SIM_
 export GZ_SIM_RESOURCE_PATH=$HOME/gz_ws/src/ardupilot_gazebo/models:$HOME/gz_ws/src/ardupilot_gazebo/worlds:$GZ_SIM_RESOURCE_PATH
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
 _fzf_compgen_path() {
   bfs -follow -exclude -name ".git" "$1" 2> /dev/null
