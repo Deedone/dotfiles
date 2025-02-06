@@ -14,6 +14,12 @@ dotfiles:
   d_zsh:
     src: zsh
     dst: ~/.zsh
+  f_alacritty.toml:
+    src: config/alacritty.toml
+    dst: ~/.config/alacritty.toml
+  f_picom.conf:
+    src: config/picom.conf
+    dst: ~/.config/picom.conf
 profiles:
   mpoturai-pc:
     dotfiles:
@@ -22,3 +28,6 @@ profiles:
   ARCHBOX:
     include:
     - mpoturai-pc
+    dotfiles:
+    - f_alacritty.toml
+    - f_picom.conf
